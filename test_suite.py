@@ -8,8 +8,8 @@ from Actions.ActionPage import Action_Page, AddToCartPage, checkout
 @pytest.fixture(scope="session")
 def driver_setup():
     chrome_options = Options()
-    #chrome_options.add_argument("--headless")      # Run in headless mode
-    #chrome_options.add_argument("--disable-gpu")   # Prevent GPU errors in headless mode
+    chrome_options.add_argument("--headless")      # Run in headless mode
+    chrome_options.add_argument("--disable-gpu")   # Prevent GPU errors in headless mode
     driver = webdriver.Chrome(options=chrome_options)
     driver.implicitly_wait(20)                     # Wait implicitly up to 20s
     driver.maximize_window()                       # Maximize window (has no effect in headless, but harmless)
